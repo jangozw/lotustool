@@ -9,9 +9,9 @@ pub fn now() -> i64 {
     Local::now().timestamp()
 }
 
-pub fn to_datetime(stamp: u64) -> String {
+pub fn to_datetime(stamp: i64) -> String {
     // Creates a new SystemTime from the specified number of whole seconds
-    let d = UNIX_EPOCH + Duration::from_secs(stamp);
+    let d = UNIX_EPOCH + Duration::from_secs(stamp as u64);
     // Create DateTime from SystemTime
     let datetime = DateTime::<Local>::from(d);
     // Formats the combined date and time with the specified format string.
